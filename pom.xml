@@ -8,13 +8,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>EduTrackPro Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<spring.version>5.3.37</spring.version>
 	</properties>
-	
+
 	<dependencies>
 		<!-- For doing UNIT Tests -->
 		<dependency>
@@ -30,7 +30,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- For database connections -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -44,7 +44,8 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<version>9.0.0</version>
 		</dependency>
-		
+
+
 		<!-- For doing loops and if checks on JSP pages -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
