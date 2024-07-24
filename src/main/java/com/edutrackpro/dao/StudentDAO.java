@@ -8,5 +8,6 @@ public interface StudentDAO {
 	
 	List<Students> loadStudents();
 	List<Students> searchStudents(String search);
+	void insertNewStudent(String name, long phone, String address);
 
 }

@@ -8,19 +8,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Students List</title>
-<!--- My CSS Link-->
-	<spring:url value="/resources/css/styles.css" var="mainCss" />
-	<link href="${mainCss}" rel="stylesheet" />
 </head>
 <body>
-	<h1> EduTrackPro </h1>
+	<h1 align = center> EduTrackPro </h1>
 	<hr>
-	<table class = "bordered-table">
+	<div align = "center">
+		<table border="1">
 		<tr>
 			<th>ID</th>
 			<th>NAME</th>
 			<th>PHONE</th>
-			<th>Address</th>
+			<th>ADDRESS</th>
 		</tr>
 		
 		<c:forEach var="student" items="${students}">
@@ -33,6 +31,6 @@
         </c:forEach>
 	
 	</table>
-	
+	</div>
 </body>
 </html>

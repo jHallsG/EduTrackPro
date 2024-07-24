@@ -13,7 +13,7 @@ import com.edutrackpro.api.Students;
 public class StudentsDAOImpl implements StudentDAO{
 	
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public List<Students> loadStudents() {
@@ -25,6 +25,11 @@ public class StudentsDAOImpl implements StudentDAO{
 		String searchPattern = "%" + search + "%";
 		List<Students> searchStudents = jdbcTemplate.query("SELECT * FROM Students WHERE name LIKE ? OR address LIKE ?", new BeanPropertyRowMapper<>(Students.class), searchPattern, searchPattern);
 		return searchStudents;
+	}
+	
+	public void insertNewStudent(String name, long phone, String address){
+		Object[] args = {name, phone, address};
+		jdbcTemplate.update("INSERT INTO students (name, phone, address) VALUES (?,?,?)", args);
 	}
 
 }
