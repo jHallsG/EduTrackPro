@@ -2,6 +2,7 @@
     pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -10,9 +11,17 @@
 <title>Students List</title>
 </head>
 <body>
-	<h1 align = center> EduTrackPro </h1>
-	<hr>
+	<header>
+			<h1 align = center> EduTrackPro </h1>
+			<hr>
+	</header>
+
 	<div align = "center">
+	
+		<form:form action = "${pageContext.request.contextPath}/edutrackpro.com/students/add" method = "GET">
+			<input type = "submit" value = "Add">
+		</form:form>
+	
 		<table border="1">
 		<tr>
 			<th>ID</th>
@@ -27,6 +36,10 @@
 			<td>${student.name}</td>
 			<td>${student.phone}</td>
 			<td>${student.address}</td>
+			<td style = "width: 200px">
+				<a href = "./update?userId=${student.id}"><button>Edit</button></a>
+				<a href = "./delete?userId=${student.id}"><button>Delete</button></a>
+			</td>
           </tr>
         </c:forEach>
 	

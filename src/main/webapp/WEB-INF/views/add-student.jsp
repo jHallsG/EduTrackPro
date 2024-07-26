@@ -12,7 +12,7 @@
 	<div align = center>
 		<h1> New Student </h1>
 		<hr>
-		<form:form action = "submit" modelAttribute = "addStudent" method = "GET">
+		<form:form action = "submit" modelAttribute = "addStudent" method = "POST">
 			<label for = "name"> Name </label>
 			<form:input name = "name" path = "name"></form:input>
 			<br>

@@ -27,9 +27,18 @@ public class StudentsDAOImpl implements StudentDAO{
 		return searchStudents;
 	}
 	
-	public void insertNewStudent(String name, long phone, String address){
-		Object[] args = {name, phone, address};
+	public void insertNewStudent(Students newStudent){
+		Object[] args = {newStudent.getName(), newStudent.getPhone(), newStudent.getAddress()};
 		jdbcTemplate.update("INSERT INTO students (name, phone, address) VALUES (?,?,?)", args);
+	}
+	
+	public Students getStudentById(int studentId){
+		Students getStudent = jdbcTemplate.queryForObject("SELECT * FROM Students WHERE id = ?", new BeanPropertyRowMapper<>(Students.class), studentId);
+		return getStudent;
+	}
+	
+	public void deleteStudent(int id){
+		jdbcTemplate.update("DELETE FROM Students WHERE id = ?", id);
 	}
 
 }

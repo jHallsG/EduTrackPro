@@ -3,7 +3,7 @@ package com.edutrackpro.api;
 public class StudentDTO {
 	
 	private String name, address;
-	private long phone;
+	private Long phone;
 	
 	public String getName() {
 		return name;
@@ -11,7 +11,7 @@ public class StudentDTO {
 	public String getAddress() {
 		return address;
 	} 
-	public long getPhone() {
+	public Long getPhone() {
 		return phone;
 	}
 	public void setName(String name) {
@@ -20,7 +20,7 @@ public class StudentDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public void setPhone(long phone) {
+	public void setPhone(Long phone) {
 		this.phone = phone;
 	}
 	

@@ -4,7 +4,7 @@ public class Students {
 	
 	private int id;
 	private String name, address;
-	private long phone;
+	private Long phone;
 	
 	public int getId() {
 		return id;
@@ -15,7 +15,7 @@ public class Students {
 	public String getAddress() {
 		return address;
 	}
-	public long getPhone() {
+	public Long getPhone() {
 		return phone;
 	}
 	public void setId(int id) {
@@ -27,7 +27,12 @@ public class Students {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public void setPhone(long phone) {
+	public void setPhone(Long phone) {
 		this.phone = phone;
+	}
+	
+	@Override
+	public String toString() {
+		return "Name: " + name + " Phone: " + phone + " Address: " + address;
 	}
 }

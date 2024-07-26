@@ -1,10 +1,10 @@
-package com.edutrackpro.dao;
+package com.edutrackpro.service;
 
 import java.util.List;
 
 import com.edutrackpro.api.Students;
 
-public interface StudentDAO {
+public interface StudentService {
 	
 	List<Students> loadStudents();
 	List<Students> searchStudents(String search);
