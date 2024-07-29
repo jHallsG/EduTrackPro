@@ -40,5 +40,10 @@ public class StudentsDAOImpl implements StudentDAO{
 	public void deleteStudent(int id){
 		jdbcTemplate.update("DELETE FROM Students WHERE id = ?", id);
 	}
+	
+	public void updateStudentInfo(Students student) {
+		Object[] args = {student.getName(), student.getPhone(), student.getAddress(), student.getId()};
+		jdbcTemplate.update("UPDATE Students SET name = ?, phone = ?, address = ? WHERE id = ?", args);
+	}
 
 }

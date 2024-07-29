@@ -37,14 +37,18 @@ public class StudentController {
 	@GetMapping("/add")
 	public String addStudent(@ModelAttribute("addStudent") Students student) {
 		
-		
 		return "add-student";
 	}
 	
 	@PostMapping("/submit")
-	public String submitNewStudent(@ModelAttribute("addStudent") Students student) {	// StudentDTO and Students have the same fields 
+	public String submitNewStudent(Students student) {	// StudentDTO and Students have the same fields 
 		
-		studentService.insertNewStudent(student);
+		
+		if (student.getId() > 0) {
+			studentService.updateStudentInfo(student);
+		} else {
+			studentService.insertNewStudent(student);
+		}
 		
 		return "redirect:/edutrackpro.com/students/show";
 	}

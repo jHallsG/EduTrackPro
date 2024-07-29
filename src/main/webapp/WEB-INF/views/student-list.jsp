@@ -36,9 +36,9 @@
 			<td>${student.name}</td>
 			<td>${student.phone}</td>
 			<td>${student.address}</td>
-			<td style = "width: 200px">
+			<td style = "width: 110px">
 				<a href = "./update?userId=${student.id}"><button>Edit</button></a>
-				<a href = "./delete?userId=${student.id}"><button>Delete</button></a>
+				<a href = "./delete?userId=${student.id}" onClick="if(!confirm('Confirm delete?')) return false"><button>Delete</button></a>
 			</td>
           </tr>
         </c:forEach>

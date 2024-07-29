@@ -11,5 +11,6 @@ public interface StudentDAO {
 	void insertNewStudent(Students student);
 	Students getStudentById(int id);
 	void deleteStudent(int id);
+	void updateStudentInfo(Students student);
 
 }

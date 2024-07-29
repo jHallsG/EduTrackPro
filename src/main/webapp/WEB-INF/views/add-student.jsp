@@ -13,6 +13,9 @@
 		<h1> New Student </h1>
 		<hr>
 		<form:form action = "submit" modelAttribute = "addStudent" method = "POST">
+			<!--  required for data binding for "UPDATE" info feature -->
+			<form:hidden path = "id"/> <!--  form:input type = "hidden" path = "id" -->
+		
 			<label for = "name"> Name </label>
 			<form:input name = "name" path = "name"></form:input>
 			<br>

@@ -11,5 +11,5 @@ public interface StudentService {
 	void insertNewStudent(Students student);
 	Students getStudentById(int id);
 	void deleteStudent(int id);
-
+	void updateStudentInfo(Students student);
 }
