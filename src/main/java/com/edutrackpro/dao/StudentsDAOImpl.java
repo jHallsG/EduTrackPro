@@ -21,9 +21,9 @@ public class StudentsDAOImpl implements StudentDAO{
 		return loadStudents;
 	}
 	
-	public List<Students> searchStudents(String search){
+	public List<Students> search(String search){
 		String searchPattern = "%" + search + "%";
-		List<Students> searchStudents = jdbcTemplate.query("SELECT * FROM Students WHERE name LIKE ? OR address LIKE ?", new BeanPropertyRowMapper<>(Students.class), searchPattern, searchPattern);
+		List<Students> searchStudents = jdbcTemplate.query("SELECT * FROM Students WHERE name LIKE ? OR address LIKE ? OR phone LIKE ?", new BeanPropertyRowMapper<>(Students.class), searchPattern, searchPattern, searchPattern);
 		return searchStudents;
 	}
 	

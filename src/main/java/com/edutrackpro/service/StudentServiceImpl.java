@@ -23,8 +23,8 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public List<Students> searchStudents(String search) {
-		return null;
+	public List<Students> search(String search) {
+		return studentDAO.search(search);
 	}
 
 	@Override

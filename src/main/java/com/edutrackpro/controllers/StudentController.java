@@ -35,7 +35,9 @@ public class StudentController {
 	}
 	
 	@GetMapping("/add")
-	public String addStudent(@ModelAttribute("addStudent") Students student) {
+	public String addStudent(@ModelAttribute("addStudent") Students student, Model model) {
+		
+		model.addAttribute("title", "New");
 		
 		return "add-student";
 	}
@@ -59,16 +61,27 @@ public class StudentController {
 		Students student = studentService.getStudentById(id);
 		
 		model.addAttribute("addStudent", student);
+		model.addAttribute("title", "Edit");
 		
 		return "add-student";
 	}
 	
 	@GetMapping("/delete")
-	public String deleteStudent(@RequestParam("userId") int id, Model model ) {
+	public String deleteStudent(@RequestParam("userId") int id) {
 		
 		studentService.deleteStudent(id);
 		
 		return "redirect:/edutrackpro.com/students/show";
+	}
+	
+	@GetMapping("/search")
+	public String searchStudent(@RequestParam("query") String query, Model model) {
+		
+		List<Students> students = studentService.search(query);
+		
+		model.addAttribute("students",students);
+		
+		return "student-list";
 	}
 	
 	@ResponseBody

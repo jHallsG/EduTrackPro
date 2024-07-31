@@ -39,7 +39,7 @@ public class AppConfig implements WebMvcConfigurer {
 		return dataSource;
 	}
 	
-	// For JSON File automatic conversion //
+	// =================== For JSON File automatic conversion ========================= //
 	@Bean
     public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
         return new MappingJackson2HttpMessageConverter();
@@ -49,4 +49,16 @@ public class AppConfig implements WebMvcConfigurer {
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(mappingJackson2HttpMessageConverter());
     }
+    // =============================================================================== //
+    
+    // =========================== For resources file ================================ //
+    
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    	registry
+    		.addResourceHandler("/resources/**")
+    		.addResourceLocations("/resources/");
+    }
+ 	
+    // =============================================================================== //
 }
